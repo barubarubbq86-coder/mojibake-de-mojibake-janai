@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffd84d" />
+  <meta name="description" content="入力した日本語の一部を特殊な文字列に変換する、子ども向けの楽しいWebアプリです。" />
+  <title>文字化けで文字化けじゃない？</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">たのしい もじへんかん</p>
+        <h1>文字化けで<br class="mobile-only" />文字化けじゃない？</h1>
+        <p class="lead">にほんごを いれてみよう！<br />きまった もじだけ へんしんするよ ✨</p>
+      </div>
+      <button id="themeToggle" class="icon-button" type="button" aria-label="ダークモードを切り替える" aria-pressed="false">
+        🌙 ダーク
+      </button>
+    </header>
+
+    <section class="card" aria-labelledby="inputTitle">
+      <div class="section-title-row">
+        <h2 id="inputTitle">① もじを いれる</h2>
+        <span class="badge">じどうへんかん ON</span>
+      </div>
+      <label class="sr-only" for="inputText">へんかんしたい もじ</label>
+      <textarea id="inputText" rows="5" placeholder="ここに もじを いれてね！\nれい：こんにちは！" spellcheck="false"></textarea>
+
+      <div class="button-grid">
+        <button id="convertButton" class="button button-primary" type="button">✨ へんかん！</button>
+        <button id="exampleButton" class="button button-secondary" type="button">📝 れいをいれる</button>
+        <button id="clearButton" class="button button-danger" type="button">🧹 けす</button>
+      </div>
+    </section>
+
+    <section class="card result-card" aria-labelledby="resultTitle">
+      <div class="section-title-row">
+        <h2 id="resultTitle">② へんかん けっか</h2>
+        <button id="copyButton" class="button button-copy" type="button">📋 コピー</button>
+      </div>
+      <label class="sr-only" for="outputText">へんかん けっか</label>
+      <textarea id="outputText" rows="5" readonly placeholder="ここに けっかが でるよ！"></textarea>
+      <p class="hint">💡 たいおうしていない文字・漢字・カタカナ・英数字は、そのままのこるよ。</p>
+    </section>
+
+    <div id="message" class="message" role="status" aria-live="polite">もじを いれてみてね！😊</div>
+
+    <footer>
+      <p>このアプリは ブラウザの中だけで うごきます。外部サーバーへの送信はありません。</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
